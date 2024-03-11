@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/server.js",
     "run": "node src/server.js",
-     "start":"node src/server.js"
+    "start": "node src/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +23,7 @@
     "mongoose": "^6.8.4",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.0",
+    "react-scripts": "^5.0.1",
     "react-time-picker": "^5.2.0"
   }
 }

@@ -47,6 +47,7 @@ const updateProduct = async (req, res) => {
 };
 
 const getAllProduct = async (req, res) => {
+  console.log("all product", req.body);
   try {
     let alldata = await Product.find();
 

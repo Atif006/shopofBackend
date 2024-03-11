@@ -37,6 +37,7 @@ const AdminLogin = async (req, res) => {
   }
 };
 const authController = async (request, resposnse) => {
+  
   try {
     const user = await Admin.findOne({ _id: request.body.id });
     user.password = undefined;

@@ -12,23 +12,24 @@ const {
   updateProduct,
   deleteProduct,
 } = require("../services/product.service.js");
-const authMiddleWare = require("../middleware/authmidleware.js");
 const {
   createOrder,
   getAllOrderOfCustomer,
   getAllOrders,
 } = require("../services/order.service.js");
+const authmidleware = require("../middleware/authmidleware.js");
+const storemiddleware = require("../middleware/storemiddleware.js");
 
 const router = express.Router();
 router.post("/login", AdminLogin);
 router.post("/register", AdminRegister);
-router.post("/createproduct", createProduct);
+router.post("/createproduct", storemiddleware, createProduct);
 router.put("/updateoneproduct/:id", updateProduct);
 router.put("/deleteProduct/:id", deleteProduct);
-router.get("/getallproduct", getAllProduct);
-router.post("/getUserData", authMiddleWare, authController);
+router.post("/getallproduct", storemiddleware, getAllProduct);
+router.post("/getUserData", authmidleware, authController);
 router.post("/createorders", createOrder);
-router.get("/getallcustomerorder", getAllOrderOfCustomer);
-router.get("/getallorders", getAllOrders);
+router.post("/getallcustomerorder", storemiddleware, getAllOrderOfCustomer);
+router.post("/getallorders", storemiddleware, getAllOrders);
 
 module.exports = router;

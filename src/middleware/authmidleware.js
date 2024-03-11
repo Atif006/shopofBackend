@@ -5,7 +5,6 @@ module.exports = async (request, response, next) => {
     const token = request.headers["authorization"].split(" ")[1];
 
     let jwt = jwtProvider.getuserIdToken(token);
-
     if (!jwt) {
       return response
         .status(200)

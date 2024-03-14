@@ -19,6 +19,10 @@ const productSchema = new mongoose.Schema({
   unit: {
     type: String,
   },
+  status: {
+    type: String,
+    default: "Available",
+  },
 });
 
 const Product = mongoose.model("products", productSchema);

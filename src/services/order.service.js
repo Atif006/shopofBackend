@@ -41,19 +41,6 @@ const createOrder = async (req, res) => {
 
     let saveOrder = await createdOrder.save();
 
-    // order.forEach((item) => {
-    //   Products.findByIdandUpdate(
-    //     item._id,
-    //     { $set: { in_stock: in_stock - item.quantity } },
-    //     { new: true }
-    //   ).then((updatedItem) => {
-    //     if (!updatedItem) {
-    //       console.log("Cannot update!");
-    //     } else {
-    //       console.log(updatedItem);
-    //     }
-    //   });
-    // });
     const updateFun = async (id, quantity) => {
       await Product.findByIdAndUpdate(
         id,

@@ -24,11 +24,11 @@ const router = express.Router();
 router.post("/login", AdminLogin);
 router.post("/register", AdminRegister);
 router.post("/createproduct", storemiddleware, createProduct);
-router.put("/updateoneproduct/:id", updateProduct);
-router.put("/deleteProduct/:id", deleteProduct);
+router.put("/updateoneproduct/:id", storemiddleware, updateProduct);
+router.put("/deleteProduct/:id", storemiddleware, deleteProduct);
 router.post("/getallproduct", storemiddleware, getAllProduct);
 router.post("/getUserData", authmidleware, authController);
-router.post("/createorders", createOrder);
+router.post("/createorders", authmidleware, createOrder);
 router.post("/getallcustomerorder", storemiddleware, getAllOrderOfCustomer);
 router.post("/getallorders", storemiddleware, getAllOrders);
 

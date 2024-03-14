@@ -47,8 +47,9 @@ const updateProduct = async (req, res) => {
 };
 
 const getAllProduct = async (req, res) => {
+  const filter = { status: "Available" };
   try {
-    let alldata = await Product.find();
+    let alldata = await Product.find(filter);
 
     res.status(200).send({ data: alldata });
   } catch (error) {
